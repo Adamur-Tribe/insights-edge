@@ -118,7 +118,7 @@ Check token balances and redeem or transfer tokens via the platform.
 
 ## License
 
-The project is licensed under [MIT](https://github.com/Adamur-Tribe/insights-edge/blob/main/LICENSE).
+This project is licensed under [MIT](https://github.com/Adamur-Tribe/insights-edge/blob/main/LICENSE).
 
 ## Authors:
 [John Eliud](https://github.com/johneliud)
