@@ -10,14 +10,14 @@ A blockchain-based platform delivering actionable insights to small businesses b
 ## 2. Tools and Technologies  
 
 ### **1. Blockchain**
-- **Celo**: For building the blockchain infrastructure and issuing platform tokens.  
-- **Solidity**: For developing smart contracts to handle tokenization and rewards.  
+- **[Celo](https://celo.org/)**: For building the blockchain infrastructure and issuing platform tokens.  
+- **[Solidity](https://soliditylang.org/)**: For developing smart contracts to handle tokenization and rewards.  
 
 ### **2. Backend**
-- **Go**: For high-performance API development, ensuring efficient data aggregation and analysis.  
+- **[Go](https://go.dev/)**: For high-performance API development, ensuring efficient data aggregation and analysis.  
 
 ### **3. Frontend**
-- **React.js**: For building an interactive and responsive user interface. 
+- **[React.js](https://react.dev/)**: For building an interactive and responsive user interface. 
 
 # Setup Instructions  
 
