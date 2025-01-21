@@ -31,7 +31,7 @@ Ensure you have the following installed:
 ### **2. Clone the Repository**  
 ```bash
 git clone https://github.com/ombima56/insights-edge.git
-cd blockchain-insights-platform
+cd insights-edge
 ```
 
 ## 3. Backend Setup (Go)
