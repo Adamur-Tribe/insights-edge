@@ -103,4 +103,23 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     window.requestAnimationFrame(step);
   }
+
+  const statsObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const value = parseInt(entry.target.getAttribute('data-value'));
+          if (value) {
+            animateValue(entry.target, 0, value, 2000);
+            statsObserver.unobserve(entry.target);
+          }
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  document.querySelectorAll('.stat-number').forEach((stat) => {
+    statsObserver.observe(stat);
+  });
 });
