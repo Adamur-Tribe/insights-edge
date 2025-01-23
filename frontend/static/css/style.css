@@ -24,6 +24,11 @@
   font-family: 'League Spartan', sans-serif;
 }
 
+.dark-theme {
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+}
+
 html,
 body {
   height: 100%;
@@ -101,6 +106,30 @@ nav {
 
 .nav-links a:hover::after {
   width: 100%;
+}
+
+.theme-toggler {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.theme-toggler i {
+  font-size: 1.5rem;
+  color: var(--primary);
+  cursor: pointer;
+}
+
+.theme-toggler .fa-sun {
+  display: none;
+}
+
+body.dark-theme .fa-sun {
+    display: flex;
+}
+
+body.dark-theme .fa-moon {
+    display: none;
 }
 
 /* Hero Section */
@@ -236,13 +265,17 @@ h1 {
   margin-bottom: 1rem;
 }
 
-.features-grid, .challenge-grid, .benefits-grid {
+.features-grid,
+.challenge-grid,
+.benefits-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
 }
 
-.feature-card, .challenge-card, .benefit-card {
+.feature-card,
+.challenge-card,
+.benefit-card {
   background: white;
   padding: 2.5rem;
   border-radius: var(--border-radius);
@@ -278,7 +311,9 @@ h1 {
   opacity: 1;
 }
 
-.feature-card i, .challenge-card i, .benefit-card i {
+.feature-card i,
+.challenge-card i,
+.benefit-card i {
   font-size: 2rem;
   color: var(--primary);
   margin-bottom: 1rem;
