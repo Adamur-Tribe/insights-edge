@@ -68,4 +68,39 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 3000);
     });
   }
+
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px',
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document
+    .querySelectorAll('.feature-card, .step, .benefit-card')
+    .forEach((el) => {
+      observer.observe(el);
+    });
+
+  function animateValue(obj, start, end, duration) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      obj.innerHTML = Math.floor(
+        progress * (end - start) + start
+      ).toLocaleString();
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }
 });
