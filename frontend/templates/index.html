@@ -199,4 +199,59 @@
       </div>
     </div>
   </section>
+
+  <!-- Enhanced Modal -->
+  <div class="waitlist-modal" id="waitlistModal">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-header">
+        <h2>Join the Waitlist</h2>
+        <p>
+          Be among the first to experience the future of business intelligence
+        </p>
+      </div>
+      <form id="waitlistForm" class="waitlist-form">
+        <div class="form-group">
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            placeholder="Full Name"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="Business Email"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            id="company"
+            name="company"
+            required
+            placeholder="Company Name"
+          />
+        </div>
+        <div class="form-group">
+          <select id="businessSize" name="businessSize" required>
+            <option value="">Select Business Size</option>
+            <option value="1-10">1-10 employees</option>
+            <option value="11-50">11-50 employees</option>
+            <option value="51-200">51-200 employees</option>
+            <option value="201+">201+ employees</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary submit-button">
+          <span>Join Waitlist</span>
+          <div class="spinner"></div>
+        </button>
+      </form>
+    </div>
+  </div>
 </html>
