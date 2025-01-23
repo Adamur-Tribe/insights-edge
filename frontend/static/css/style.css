@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
 
 :root {
   --primary: #6366f1;
@@ -21,12 +21,17 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'League Spartan', sans-serif;
+}
+
+.dark-theme {
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
 }
 
 html,
 body {
   height: 100%;
-  font-family: "League Spartan", sans-serif;
 }
 
 body {
@@ -88,7 +93,7 @@ nav {
 }
 
 .nav-links a::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -103,6 +108,30 @@ nav {
   width: 100%;
 }
 
+.theme-toggler {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.theme-toggler i {
+  font-size: 1.5rem;
+  color: var(--primary);
+  cursor: pointer;
+}
+
+.theme-toggler .fa-sun {
+  display: none;
+}
+
+body.dark-theme .fa-sun {
+    display: flex;
+}
+
+body.dark-theme .fa-moon {
+    display: none;
+}
+
 /* Hero Section */
 .hero {
   padding: 10rem 0 6rem;
@@ -112,7 +141,7 @@ nav {
 }
 
 .hero::before {
-  content: "";
+  content: '';
   position: absolute;
   top: -50%;
   right: -50%;
@@ -180,7 +209,7 @@ h1 {
 }
 
 .btn-primary::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -236,13 +265,17 @@ h1 {
   margin-bottom: 1rem;
 }
 
-.features-grid {
+.features-grid,
+.challenge-grid,
+.benefits-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
 }
 
-.feature-card {
+.feature-card,
+.challenge-card,
+.benefit-card {
   background: white;
   padding: 2.5rem;
   border-radius: var(--border-radius);
@@ -254,7 +287,7 @@ h1 {
 }
 
 .feature-card::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -278,7 +311,9 @@ h1 {
   opacity: 1;
 }
 
-.feature-card i {
+.feature-card i,
+.challenge-card i,
+.benefit-card i {
   font-size: 2rem;
   color: var(--primary);
   margin-bottom: 1rem;
@@ -431,9 +466,15 @@ footer {
 
 /* Enhanced Animations */
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .floating {
