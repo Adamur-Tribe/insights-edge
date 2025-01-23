@@ -20,4 +20,30 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 300);
     });
   }
+
+  const form = document.getElementById('waitlistForm');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = form.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.classList.add('loading');
+
+      try {
+        await new Promise((resolve) => setTimeout(resolve, 1500));
+        showNotification('Successfully joined the waitlist!', 'success');
+        form.reset();
+        setTimeout(() => {
+          modal.classList.remove('modal-active');
+          modal.style.display = 'none';
+          document.body.style.overflow = 'auto';
+        }, 1000);
+      } catch (error) {
+        showNotification('Something went wrong. Please try again.', 'error');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('loading');
+      }
+    });
+  }
 });
