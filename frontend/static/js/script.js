@@ -46,4 +46,26 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  function showNotification(message, type = 'success') {
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.innerHTML = `
+        <div class="notification-content">
+          <i class="fas fa-${
+            type === 'success' ? 'check-circle' : 'exclamation-circle'
+          }"></i>
+          <span>${message}</span>
+        </div>
+      `;
+    document.body.appendChild(notification);
+
+    requestAnimationFrame(() => {
+      notification.classList.add('show');
+      setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => notification.remove(), 300);
+      }, 3000);
+    });
+  }
 });
